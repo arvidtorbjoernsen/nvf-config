@@ -15,7 +15,7 @@
   outputs =
     { nixpkgs, ... }@inputs:
     let
-      lib = nixpkgs.lib;
+      inherit (nixpkgs) lib;
       systems = lib.systems.flakeExposed;
       pkgsFor = lib.genAttrs systems (system: import nixpkgs { inherit system; });
       forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});

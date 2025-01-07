@@ -1,5 +1,10 @@
 colorScheme:
-{ pkgs, util, ... }:
+{
+  pkgs,
+  util,
+  lib,
+  ...
+}:
 {
   imports = [
     ./options.nix
@@ -13,10 +18,58 @@ colorScheme:
 
     theme = {
       enable = true;
-      name = "base16";
-      # name = "gruvbox";
-      # style = "dark";
-      base16-colors = colorScheme.palette;
+      # Looks bad :(
+      # name = "base16";
+      # base16-colors = colorScheme.palette;
+      name = "gruvbox";
+      style = "dark";
+    };
+
+    languages = {
+      # Options applied to all languages
+      enableLSP = true;
+      enableFormat = true;
+      enableTreesitter = true;
+      enableExtraDiagnostics = true;
+
+      # Languages
+      nix = {
+        enable = true;
+        format = {
+          type = "nixfmt";
+          package = pkgs.nixfmt-rfc-style;
+        };
+      };
+      markdown.enable = true;
+      ts.enable = true;
+      python.enable = true;
+      html.enable = true;
+      css.enable = true;
+      tailwind.enable = true;
+      lua.enable = true;
+      haskell.enable = true;
+      svelte.enable = true;
+      astro.enable = true;
+      rust.enable = true;
+    };
+
+    debugger = {
+      nvim-dap = {
+        enable = true;
+        ui.enable = true;
+      };
+    };
+
+    treesitter = {
+      enable = true;
+      addDefaultGrammars = true;
+      autotagHtml = true;
+      # context = {
+      #   enable = true;
+      #   setupOpts = {
+      #     max_lines = 2;
+      #   };
+      # };
     };
 
     statusline = {
@@ -25,17 +78,38 @@ colorScheme:
       };
     };
 
+    visuals = {
+      nvim-web-devicons.enable = true;
+      nvim-cursorline.enable = true;
+      fidget-nvim.enable = true;
+      highlight-undo.enable = true;
+      indent-blankline.enable = true;
+    };
+
+    ui = {
+      noice.enable = true;
+      modes-nvim.enable = true;
+    };
+
     binds.whichKey = {
       enable = true;
       register = {
         "<leader>f" = "Pickers";
         "<leader>g" = "Git";
+        "<leader>d" = "Debugger";
+        "<leader>l" = "LSP";
       };
       setupOpts = {
         preset = "classic";
         delay = 0;
         icons.mappings = false;
         win.border = "none";
+        triggers = [
+          {
+            "@" = "<leader>";
+            mode = "n";
+          }
+        ];
       };
     };
 
