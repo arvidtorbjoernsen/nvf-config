@@ -1,5 +1,9 @@
-{ pkgs, inputs }:
-(inputs.nvf.lib.neovimConfiguration {
+{
+  pkgs,
+  nvf,
+  colorScheme,
+}:
+(nvf.lib.neovimConfiguration {
   inherit pkgs;
-  modules = [ (import ./config) ];
+  modules = [ (import ./config colorScheme) ];
 }).neovim

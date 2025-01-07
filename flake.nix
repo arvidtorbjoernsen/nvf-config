@@ -7,6 +7,9 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-colors = {
+      url = "github:misterio77/nix-colors";
+    };
   };
 
   outputs =
@@ -19,7 +22,10 @@
     in
     {
       packages = forEachSystem (pkgs: {
-        default = pkgs.callPackage ./package.nix { inherit inputs; };
+        default = pkgs.callPackage ./package.nix {
+          inherit (inputs) nvf;
+          colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
+        };
       });
 
       devShells = forEachSystem (pkgs: {
