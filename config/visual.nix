@@ -16,8 +16,21 @@
       };
     };
 
-    tabline = {
-      nvimBufferline.enable = true;
+    tabline.nvimBufferline = {
+      enable = true;
+      setupOpts = {
+        options = {
+          numbers = "none";
+          tab_size = 14;
+          pick.alphabet = "abcdefghijklmnopqrstuvwxyzæøåABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ";
+        };
+      };
+      mappings = {
+        cycleNext = "<tab>";
+        cyclePrevious = "<S-tab>";
+        moveNext = "<C-.>";
+        movePrevious = "<C-,>";
+      };
     };
 
     visuals = {
