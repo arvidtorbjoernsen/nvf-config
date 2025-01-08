@@ -53,6 +53,14 @@ colorScheme:
       rust.enable = true;
     };
 
+    lsp = {
+      formatOnSave = true;
+      # lspkind.enable = true;
+      trouble.enable = true;
+      lspSignature.enable = true;
+      otter-nvim.enable = true;
+    };
+
     debugger = {
       nvim-dap = {
         enable = true;
@@ -72,10 +80,18 @@ colorScheme:
       # };
     };
 
+    autopairs.nvim-autopairs.enable = true;
+
+    filetree.nvimTree.enable = true;
+
     statusline = {
       lualine = {
         enable = true;
       };
+    };
+
+    tabline = {
+      nvimBufferline.enable = true;
     };
 
     visuals = {
