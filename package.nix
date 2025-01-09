@@ -7,7 +7,7 @@
   inherit pkgs;
   modules = [ (import ./config) ];
   extraSpecialArgs = {
-    util = import ./config/lib.nix;
+    util = import ./config/util.nix;
     # Inputs is seemingly reserver, though the docs don't show it
     inputs' = inputs;
     inherit colorScheme;
