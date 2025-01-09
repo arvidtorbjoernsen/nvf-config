@@ -6,6 +6,7 @@
     ./binds.nix
     ./picker.nix
     ./languages
+    ./notes
   ];
 
   vim = {
