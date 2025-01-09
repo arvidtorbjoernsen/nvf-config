@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ colorScheme, lib, ... }:
 {
   imports = [
     ./options.nix
@@ -8,6 +8,8 @@
     ./languages
     ./notes
   ];
+
+  _module.args.colorScheme' = lib.attrsets.mapAttrs (_: value: "#${value}") colorScheme.palette;
 
   vim = {
     viAlias = true;
