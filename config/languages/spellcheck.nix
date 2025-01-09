@@ -12,7 +12,7 @@ let
     in
     ''
       function()
-        vim.opt.spellang = ${langs'}
+        vim.opt.spelllang = ${langs'}
         vim.opt.spellfile = ${spellfiles'}
       end
     '';
