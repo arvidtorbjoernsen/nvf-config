@@ -2,6 +2,7 @@
 {
   imports = [
     ./completion.nix
+    ./spellcheck.nix
   ];
 
   vim = {
