@@ -5,6 +5,8 @@
     lazy.plugins."fzf-lua" = {
       package = pkgs.vimPlugins.fzf-lua;
       cmd = [ "FzfLua" ];
+      setupModule = "fzf-lua";
+      setupOpts."@" = "default-title";
 
       keys = [
         # Files
