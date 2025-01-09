@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./completion.nix
+  ];
+
   vim = {
     languages = {
       # Options applied to all languages

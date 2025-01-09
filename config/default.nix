@@ -1,4 +1,5 @@
-colorScheme: {
+{ colorScheme, inputs, ... }:
+{
   imports = [
     ./options.nix
     ./visual.nix
@@ -7,8 +8,10 @@ colorScheme: {
     ./languages
   ];
 
-  _module.args.util = import ./lib.nix;
-  _module.args.colorScheme = colorScheme;
+  _module.args = {
+    util = import ./lib.nix;
+    inherit colorScheme inputs;
+  };
 
   vim = {
     viAlias = true;

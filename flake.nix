@@ -2,7 +2,8 @@
   description = "My standalone neovim configuration in nvf";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # FIXME: when https://github.com/NixOS/nixpkgs/pull/372019 is in nixos-unstable
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,7 +24,7 @@
     {
       packages = forEachSystem (pkgs: {
         default = pkgs.callPackage ./package.nix {
-          inherit (inputs) nvf;
+          inherit inputs;
           colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
         };
       });
