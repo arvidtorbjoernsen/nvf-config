@@ -1,3 +1,4 @@
+{ util, ... }:
 {
   vim = {
     binds.whichKey = {
@@ -7,6 +8,7 @@
         "<leader>g" = "Git";
         "<leader>d" = "Debugger";
         "<leader>l" = "LSP";
+        "<leader>c" = "Spellcheck";
       };
       setupOpts = {
         preset = "classic";
@@ -22,5 +24,13 @@
       };
     };
 
+    keymaps = [
+      (util.mkKeymap' "v" "<" "<gv")
+      (util.mkKeymap' "v" ">" ">gv")
+      (util.mkKeymap' "n" "j" "gj")
+      (util.mkKeymap' "n" "k" "gk")
+      (util.mkKeymap' "n" "H" "_")
+      (util.mkKeymap' "n" "L" "g_")
+    ];
   };
 }
