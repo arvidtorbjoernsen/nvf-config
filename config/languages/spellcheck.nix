@@ -31,7 +31,7 @@ in
         "nb"
         "fr"
       ]) "Engelsk")
-      (util.mkLuaKeymap "n" "<leader>cle" (mkSpell [
+      (util.mkLuaKeymap "n" "<leader>clf" (mkSpell [
         "fr"
         "en_us"
         "nb"
@@ -41,7 +41,7 @@ in
         "en_us"
         "fr"
       ]) "Norsk Bokmål")
-      (util.mkLuaKeymap "n" "<leader>clb" (mkSpell [
+      (util.mkLuaKeymap "n" "<leader>cln" (mkSpell [
         "nn"
         "en_us"
         "fr"
