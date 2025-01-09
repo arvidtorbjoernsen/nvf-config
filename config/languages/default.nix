@@ -1,13 +1,13 @@
 { pkgs, ... }:
 {
   vim = {
-
     languages = {
       # Options applied to all languages
       enableLSP = true;
       enableFormat = true;
       enableTreesitter = true;
       enableExtraDiagnostics = true;
+      enableDAP = true;
 
       # Languages
       nix = {
