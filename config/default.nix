@@ -1,4 +1,4 @@
-{ colorScheme, inputs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./options.nix
@@ -8,13 +8,9 @@
     ./languages
   ];
 
-  _module.args = {
-    util = import ./lib.nix;
-    inherit colorScheme inputs;
-  };
-
   vim = {
     viAlias = true;
     vimAlias = true;
+    enableLuaLoader = true;
   };
 }

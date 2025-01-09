@@ -404,6 +404,38 @@
         "type": "github"
       }
     },
+    "plugin-blink-cmp-spell": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1734075730,
+        "narHash": "sha256-Z8sjHCEeEpcbN5bvWTR15iazxUVlRzxrKyBd88AE2F4=",
+        "owner": "ribru17",
+        "repo": "blink-cmp-spell",
+        "rev": "416d8ca1bce6d5d16be47c4cee88d9326bf13ca5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ribru17",
+        "repo": "blink-cmp-spell",
+        "type": "github"
+      }
+    },
+    "plugin-blink-emoji": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1736024601,
+        "narHash": "sha256-xzBMFc1BwCNEWJGFWQbXSuxZ4WsiTs2gbFdPW+nSBc4=",
+        "owner": "moyiz",
+        "repo": "blink-emoji.nvim",
+        "rev": "81e6c080d1e64c9ef548534c51147fd8063481c8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "moyiz",
+        "repo": "blink-emoji.nvim",
+        "type": "github"
+      }
+    },
     "plugin-bufdelete-nvim": {
       "flake": false,
       "locked": {
@@ -2302,7 +2334,9 @@
       "inputs": {
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs",
-        "nvf": "nvf"
+        "nvf": "nvf",
+        "plugin-blink-cmp-spell": "plugin-blink-cmp-spell",
+        "plugin-blink-emoji": "plugin-blink-emoji"
       }
     },
     "rust-overlay": {
