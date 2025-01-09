@@ -59,7 +59,7 @@
               "buffer"
               "emoji"
             ];
-            # cmdline = [ ];
+            cmdline = [ ];
 
             providers = {
               emoji = {
