@@ -8,7 +8,6 @@
         "<leader>g" = "Git";
         "<leader>d" = "Debugger";
         "<leader>l" = "LSP";
-        "<leader>c" = "Spellcheck";
       };
       setupOpts = {
         preset = "classic";

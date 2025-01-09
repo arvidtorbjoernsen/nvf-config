@@ -1,8 +1,7 @@
 { util, lib, ... }:
 let
-  spellDir = "$HOME/.spell";
-  mkSpellFile =
-    lang: "${spellDir}/spell/${lib.lists.head (lib.strings.splitString "_" lang)}.utf-8.add";
+  # .spell is synced with syncthing
+  mkSpellFile = lang: "/.spell/spell/${lib.lists.head (lib.strings.splitString "_" lang)}.utf-8.add";
   mkSpell =
     langs:
     let
@@ -10,19 +9,22 @@ let
       spellfiles = map mkSpellFile langs;
       spellfiles' = lib.nvim.lua.listToLuaTable spellfiles;
     in
+    # Spell is disabled by default, enabled on language switch
     ''
       function()
+        vim.opt.spell = true
         vim.opt.spelllang = ${langs'}
-        vim.opt.spellfile = ${spellfiles'}
+        vim.opt.spellfile = vim.tbl_map(function (path)
+          return os.getenv("HOME") .. path
+        end, ${spellfiles'})
       end
     '';
 in
 {
   vim = {
-    options = {
-      spell = true;
-      spl = "en_us";
-      spf = mkSpellFile "en_us";
+    binds.whichKey.register = {
+      "<leader>c" = "Spellcheck";
+      "<leader>cl" = "Language";
     };
 
     keymaps = [
@@ -46,6 +48,13 @@ in
         "en_us"
         "fr"
       ]) "Norsk Bokmål")
+      (util.mkKeymap "n" "<leader>cg" "zg" "Mark as correct")
+      (util.mkKeymap "n" "<leader>cw" "zw" "Mark as wrong")
+      (util.mkKeymap "n" "<leader>cu" "zuw" "Undo mark")
+      (util.mkKeymap "n" "<leader>cc" ":FzfLua spell_suggest<cr>" "See suggestions")
+      (util.mkKeymap "n" "<leader>cn" "]s" "Next misspelled word")
+      (util.mkKeymap "n" "<leader>cN" "[s" "Previous misspelled word")
+      (util.mkKeymap "n" "<leader>cd" ":setlocal nospell<cr>" "Disable spellcheck")
     ];
   };
 }
