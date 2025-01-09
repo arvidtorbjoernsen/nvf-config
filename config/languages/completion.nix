@@ -6,7 +6,28 @@
       setupModule = "blink.cmp";
 
       setupOpts = {
-        keymap.preset = "default";
+        keymap =
+          let
+            fallback = a: [
+              a
+              "fallback"
+            ];
+          in
+          {
+            preset = "none";
+            "<C-j>" = fallback "select_next";
+            "<C-k>" = fallback "select_prev";
+            "<CS-j>" = fallback "scroll_documentation_down";
+            "<CS-k>" = fallback "scroll_documentation_up";
+            "<C-space>" = [
+              "show"
+              "show_documentation"
+              "hide_documentation"
+            ];
+            "<C-e>" = [ "hide" ];
+            "<C-y>" = [ "select_and_accept" ];
+          };
+
         sources.default = [
           "lsp"
           "path"
@@ -14,8 +35,12 @@
           "buffer"
         ];
 
+        # sources.cmdline = [ ];
+
         completion = {
-          menu.auto_show = true;
+          menu = {
+            auto_show = true;
+          };
 
           documentation = {
             auto_show = true;
