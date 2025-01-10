@@ -11,8 +11,6 @@
       setupOpts = {
         mappings = [ ];
 
-        # Seemingly impossible to unset, so has to be duplicated
-        dir = "̃~/notes/obsidian";
         workspaces = [
           {
             name = "personal";

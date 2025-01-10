@@ -2,8 +2,7 @@
   description = "My standalone neovim configuration in nvf";
 
   inputs = {
-    # FIXME: when https://github.com/NixOS/nixpkgs/pull/372019 is in nixos-unstable
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
