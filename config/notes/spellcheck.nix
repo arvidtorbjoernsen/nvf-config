@@ -32,11 +32,13 @@ in
         "en_us"
         "nb"
         "fr"
+        "nn"
       ]) "Engelsk")
       (util.mkLuaKeymap "n" "<leader>clf" (mkSpell [
         "fr"
         "en_us"
         "nb"
+        "nn"
       ]) "Fransk")
       (util.mkLuaKeymap "n" "<leader>clb" (mkSpell [
         "nb"
