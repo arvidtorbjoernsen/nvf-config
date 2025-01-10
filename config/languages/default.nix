@@ -22,6 +22,7 @@
         };
       };
       markdown.enable = true;
+      markdown.lsp.enable = false;
       ts.enable = true;
       python.enable = true;
       html.enable = true;
@@ -59,6 +60,10 @@
       #     max_lines = 2;
       #   };
       # };
+      # Maybe just install every single one from `pkgs.tree-sitter-grammars`?
+      grammars = with pkgs.tree-sitter-grammars; [
+        tree-sitter-yaml # Affects obsidian note frontmatter
+      ];
     };
 
     autopairs.nvim-autopairs.enable = true;

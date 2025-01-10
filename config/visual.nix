@@ -42,7 +42,7 @@
     };
 
     ui = {
-      noice.enable = true;
+      # noice.enable = true;
       modes-nvim.enable = true;
     };
 

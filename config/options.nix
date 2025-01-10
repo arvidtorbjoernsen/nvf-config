@@ -28,6 +28,10 @@
       swapfile = false;
       backup = false;
 
+      # Disable folding
+      foldlevel = 99;
+      foldlevelstart = 99;
+
       # Misc
       termguicolors = true;
       timeoutlen = 1000;
