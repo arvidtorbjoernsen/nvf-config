@@ -47,7 +47,7 @@ in
         "nn"
         "en_us"
         "fr"
-      ]) "Norsk Bokmål")
+      ]) "Norsk Nynorsk")
       (util.mkKeymap "n" "<leader>cg" "zg" "Mark as correct")
       (util.mkKeymap "n" "<leader>cw" "zw" "Mark as wrong")
       (util.mkKeymap "n" "<leader>cu" "zuw" "Undo mark")
