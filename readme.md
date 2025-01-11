@@ -27,7 +27,7 @@ My [LuaSnip](https://github.com/L3MON4D3/LuaSnip) snippets are also available fr
         enable_autosnippets = true;
     };
     providers = [
-      inputs.packages.${pkgs.system}.snippets
+      inputs.lilleaila-nvf.packages.${pkgs.system}.snippets
     ];
     loaders = # lua
       ''
