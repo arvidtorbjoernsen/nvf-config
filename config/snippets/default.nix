@@ -11,7 +11,7 @@
     };
     providers = [
       (pkgs.vimUtils.buildVimPlugin {
-        name = "my-snippets";
+        name = "lilleaila-snippets";
         src = ./.;
         dependencies = with pkgs.vimPlugins; [
           luasnip
@@ -20,7 +20,7 @@
     ];
     loaders = # lua
       ''
-        require("my-snippets").load_snippets()
+        require("lilleaila-snippets").load_snippets()
       '';
   };
 }
