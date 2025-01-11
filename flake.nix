@@ -22,7 +22,7 @@
   };
 
   outputs =
-    { nixpkgs, ... }@inputs:
+    { self, nixpkgs, ... }@inputs:
     let
       inherit (nixpkgs) lib;
       systems = lib.systems.flakeExposed;
@@ -30,11 +30,14 @@
       forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
     in
     {
-      packages = forEachSystem (pkgs: {
-        default = pkgs.callPackage ./package.nix {
+      packages = forEachSystem (pkgs: rec {
+        default = nvf-config;
+        nvf-config = pkgs.callPackage ./pkgs/nvf-config.nix {
           inherit inputs;
+          inherit (self) outputs;
           colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
         };
+        snippets = pkgs.callPackage ./pkgs/snippets.nix { };
       });
 
       devShells = forEachSystem (pkgs: {

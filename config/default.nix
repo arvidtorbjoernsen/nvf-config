@@ -11,6 +11,7 @@
   ];
 
   _module.args.colorScheme' = lib.attrsets.mapAttrs (_: value: "#${value}") colorScheme.palette;
+  _module.args.util = import ./util.nix;
 
   vim = {
     viAlias = true;

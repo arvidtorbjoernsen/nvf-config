@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, outputs, ... }:
 {
   vim.snippets.luasnip = {
     enable = true;
@@ -10,13 +10,7 @@
       history = false;
     };
     providers = [
-      (pkgs.vimUtils.buildVimPlugin {
-        name = "lilleaila-snippets";
-        src = ./.;
-        dependencies = with pkgs.vimPlugins; [
-          luasnip
-        ];
-      })
+      outputs.packages.${pkgs.system}.snippets
     ];
     loaders = # lua
       ''
