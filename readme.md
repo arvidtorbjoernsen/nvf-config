@@ -22,6 +22,10 @@ My [LuaSnip](https://github.com/L3MON4D3/LuaSnip) snippets are also available fr
 { pkgs, inputs, ... }:
 {
   vim.snippets.luasnip = {
+    enable = true;
+    setupOpts = {
+        enable_autosnippets = true;
+    };
     providers = [
       inputs.packages.${pkgs.system}.snippets
     ];
@@ -37,3 +41,5 @@ This package contains the following types of snippets:
 
 - LaTeX math
 - LaTeX math in markdown
+
+The only dependency is [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter), with the grammars of the supported languages installed.
