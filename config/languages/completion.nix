@@ -48,14 +48,13 @@
               "<C-y>" = [ "select_and_accept" ];
             };
 
-          # TODO when luasnip
-          # snippets.preset = "luasnip";
+          snippets.preset = "luasnip";
 
           sources = {
             default = [
               "lsp"
               "path"
-              # "snippets"
+              "snippets"
               "buffer"
               "emoji"
             ];

@@ -21,8 +21,13 @@
           package = pkgs.nixfmt-rfc-style;
         };
       };
-      markdown.enable = true;
-      markdown.lsp.enable = false;
+      markdown = {
+        enable = true;
+        lsp.enable = false;
+        # TODO: https://github.com/NotAShelf/nvf/pull/548
+        # format.type = "prettierd";
+        format.enable = false;
+      };
       ts.enable = true;
       python.enable = true;
       html.enable = true;

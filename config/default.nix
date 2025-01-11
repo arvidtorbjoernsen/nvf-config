@@ -7,6 +7,7 @@
     ./picker.nix
     ./languages
     ./notes
+    # ./snippets # TODO: https://github.com/NotAShelf/nvf/pull/549
   ];
 
   _module.args.colorScheme' = lib.attrsets.mapAttrs (_: value: "#${value}") colorScheme.palette;
