@@ -1,4 +1,3 @@
-{ colorScheme, ... }:
 {
   vim = {
     theme = {
@@ -30,6 +29,7 @@
         cyclePrevious = "<S-tab>";
         moveNext = "<C-.>";
         movePrevious = "<C-,>";
+        closeCurrent = "<C-c>";
       };
     };
 
