@@ -24,8 +24,7 @@
       markdown = {
         enable = true;
         lsp.enable = false;
-        # TODO: https://github.com/NotAShelf/nvf/pull/548
-        # format.type = "prettierd";
+        format.type = "prettierd";
         format.enable = false;
       };
       ts.enable = true;
