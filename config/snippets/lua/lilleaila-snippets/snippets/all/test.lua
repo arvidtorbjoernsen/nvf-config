@@ -1,6 +1,4 @@
-local ls = require("luasnip")
-local s = ls.snippet
-local t = ls.text_node
+require("lilleaila-snippets.helpers.ls").load_vars()
 
 local word = require("lilleaila-snippets.helpers.utils").word
 

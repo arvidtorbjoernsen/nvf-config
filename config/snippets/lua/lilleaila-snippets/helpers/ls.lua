@@ -5,6 +5,7 @@ local M = {}
 function M.load_vars()
   local ls = require("luasnip")
   local extras = require("luasnip.extras")
+  local fmt = require("luasnip.extras.fmt")
 
   _G.ls = ls
   _G.extras = extras
@@ -18,13 +19,16 @@ function M.load_vars()
   _G.d = ls.dynamic_node
   _G.r = ls.restore_node
   _G.l = extras.lambda
+  _G.events = require("luasnip.util.events")
+  _G.ai = require("luasnip.nodes.absolute_indexer")
+  _G.extras = require("luasnip.extras")
   _G.rep = extras.rep
   _G.p = extras.partial
   _G.m = extras.match
   _G.n = extras.nonempty
   _G.dl = extras.dynamic_lambda
-  _G.fmt = require("luasnip.extras.fmt").fmt
-  _G.fmta = require("luasnip.extras.fmt").fmta
+  _G.fmt = fmt.fmt
+  _G.fmta = fmt.fmta
   _G.conds = require("luasnip.extras.expand_conditions")
   _G.postfix = require("luasnip.extras.postfix").postfix
   _G.types = require("luasnip.util.types")
