@@ -43,3 +43,5 @@ This package contains the following types of snippets:
 - LaTeX math in markdown
 
 The only dependency is [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter), with the grammars of the supported languages installed.
+
+Note that the snippets do not require nvf or nix, and can be used as long as the provided package (or `config/snippets`) are in neovim's path.
