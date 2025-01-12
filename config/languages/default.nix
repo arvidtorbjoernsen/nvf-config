@@ -54,19 +54,16 @@
       };
     };
 
+    # startPlugins = [ pkgs.vimPlugins.nvim-treesitter.withAllGrammars ];
+
     treesitter = {
       enable = true;
       addDefaultGrammars = true;
       autotagHtml = true;
-      # context = {
-      #   enable = true;
-      #   setupOpts = {
-      #     max_lines = 2;
-      #   };
-      # };
-      # Maybe just install every single one from `pkgs.tree-sitter-grammars`?
-      grammars = with pkgs.tree-sitter-grammars; [
-        tree-sitter-yaml # Affects obsidian note frontmatter
+      # Maybe just install every single one?
+      grammars = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        yaml # Affects obsidian note frontmatter
+        latex
       ];
     };
 

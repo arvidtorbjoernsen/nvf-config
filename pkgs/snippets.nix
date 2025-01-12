@@ -4,5 +4,6 @@ vimUtils.buildVimPlugin {
   src = ../config/snippets;
   dependencies = with vimPlugins; [
     luasnip
+    nvim-treesitter
   ];
 }
