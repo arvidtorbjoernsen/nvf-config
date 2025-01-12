@@ -42,7 +42,7 @@ end
 
 -- OR a list of functions to be used as a condition
 function M.or_condition(functions)
-  return function()
+  return function(line_to_cursor, matched_trigger, captures)
     for _, func in ipairs(functions) do
       if func(line_to_cursor, matched_trigger, captures) then
         return true
@@ -69,6 +69,12 @@ function M.get_cap(index)
 end
 
 -- M.line_begin = require("luasnip.extras.expand_conditions").line_begin
+
+function M.word(line_to_cursor, match)
+  local from = #line_to_cursor - #match + 1
+  local prefix = string.sub(line_to_cursor, from - 1, from - 1)
+  return from == 1 or string.match(prefix, "[%s]") ~= nil
+end
 
 -- autosnippet
 M.asnip = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })

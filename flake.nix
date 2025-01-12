@@ -46,6 +46,8 @@
             nixd
             nixfmt-rfc-style
             statix
+            lua-language-server
+            # stylua # TODO: configure (spaces instead of tabs)
           ];
         };
       });
