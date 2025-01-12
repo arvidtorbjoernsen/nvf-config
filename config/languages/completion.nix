@@ -48,7 +48,7 @@
               "<C-y>" = [ "select_and_accept" ];
             };
 
-          snippets.preset = "luasnip"; # TODO: https://github.com/NotAShelf/nvf/pull/549
+          snippets.preset = "luasnip";
 
           sources = {
             default = [
