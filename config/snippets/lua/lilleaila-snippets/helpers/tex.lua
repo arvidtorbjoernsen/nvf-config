@@ -1,7 +1,7 @@
 local ls = require("lilleaila-snippets.helpers.ls")
 local s, parse = ls.s, ls.parse
 
-local utils = require("lilleaila-snippets.helpers.utils")
+local utils = require("lilleaila-snippets.helpers.util")
 local ts_utils = require("nvim-treesitter.ts_utils")
 
 local M = {}

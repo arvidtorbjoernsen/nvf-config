@@ -1,6 +1,6 @@
 local ls = require("lilleaila-snippets.helpers.ls")
 local s, t = ls.s, ls.t
-local word = require("lilleaila-snippets.helpers.utils").word
+local word = require("lilleaila-snippets.helpers.util").word
 
 local M = {
   s("test123", t("Hello, World!")),

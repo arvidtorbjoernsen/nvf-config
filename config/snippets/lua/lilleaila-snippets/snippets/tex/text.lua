@@ -1,5 +1,5 @@
 local tex = require("lilleaila-snippets.helpers.tex")
-local utils = require("lilleaila-snippets.helpers.utils")
+local utils = require("lilleaila-snippets.helpers.util")
 local tsnip = tex.tsnip
 local _tsnip = tex._tsnip
 local msnip = tex.msnip
