@@ -10,6 +10,16 @@ local fsnip = tex.fsnip
 local _fsnip = tex._fsnip
 
 return {
+  fsnip({ trig = "lim", descr = "Limit" }, [[\lim_{$1 \to \infty}]]),
+
+  fsnip("pm", [[\pm]]),
+  fsnip("in", [[\in]]),
+  fsnip("notin", [[\notin]]),
+  fsnip("forall", [[\forall]]),
+  fsnip("impl", [[\implies]]),
+  fsnip("iff", [[\iff]]),
+  fsnip("ø", [[\emptyset]]),
+
   _fsnip({ trig = "kv1", descr = "Første kvadratsetning" },
     fmta(
       [[\left(<>+<>\right)^{2} = <>^{2} + 2 \cdot <> \cdot <> + <>^{2}]],
@@ -30,14 +40,4 @@ return {
       [[x = \frac{-<> \pm \sqrt{<>^{2} - 4 \cdot <> \cdot <>}}{2 \cdot <>} ]],
       { i(2, "b"), rep(2), rep(1), i(3, "c"), i(1, "a") }
     )),
-
-  fsnip({ trig = "lim", descr = "Limit" }, [[\lim_{$1 \to \infty}]]),
-
-  fsnip("pm", [[\pm]]),
-  fsnip("in", [[\in]]),
-  fsnip("notin", [[\notin]]),
-  fsnip("forall", [[\forall]]),
-  fsnip("impl", [[\implies]]),
-  fsnip("iff", [[\iff]]),
-  fsnip("ø", [[\emptyset]])
 }
