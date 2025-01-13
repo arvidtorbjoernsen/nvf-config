@@ -1,4 +1,9 @@
-{ pkgs, outputs, ... }:
+{
+  pkgs,
+  outputs,
+  util,
+  ...
+}:
 {
   vim = {
     snippets.luasnip = {
@@ -20,5 +25,39 @@
     };
 
     lazy.plugins.luasnip.event = "BufEnter";
+
+    keymaps = [
+      {
+        mode = "i";
+        key = "<tab>";
+        lua = true;
+        expr = true;
+        noremap = true;
+        action = # lua
+          ''
+            function()
+              local ls = require("luasnip")
+              if ls.expand_or_jumpable() then
+                vim.schedule(function()
+                  ls.expand_or_jump()
+                end)
+                return "<ignore>"
+              else
+                return vim.api.nvim_replace_termcodes("<tab>", true, true, true)
+              end
+            end
+          '';
+      }
+      # FIXME: does not seem to work
+      (util.mkLuaKeymap' "i" "<S-tab>" # lua
+        ''
+          function()
+            vim.schedule(function()
+              require("luasnip").jump(-1)
+            end)
+          end
+        ''
+      )
+    ];
   };
 }
