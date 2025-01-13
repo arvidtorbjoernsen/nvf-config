@@ -1,4 +1,5 @@
 local ls = require("lilleaila-snippets.helpers.ls")
+local t, d, sn = ls.t, ls.d, ls.sn
 
 M = {}
 
@@ -49,6 +50,10 @@ function M.word(line_to_cursor, match)
   local from = #line_to_cursor - #match + 1
   local prefix = string.sub(line_to_cursor, from - 1, from - 1)
   return from == 1 or string.match(prefix, "[%s]") ~= nil
+end
+
+function M.postfix_match(_, parent)
+  return sn(nil, { t(parent.env.POSTFIX_MATCH) })
 end
 
 -- autosnippet

@@ -10,16 +10,6 @@ local msnip = tex.msnip
 local _msnip = tex._msnip
 
 return {
-  msnip({ trig = "lim", descr = "Limit" }, [[\lim_{$1 \to \infty}]]),
-
-  msnip("pm", [[\pm]]),
-  msnip("in", [[\in]]),
-  msnip("notin", [[\notin]]),
-  msnip("forall", [[\forall]]),
-  msnip("impl", [[\implies]]),
-  msnip("iff", [[\iff]]),
-  msnip("ø", [[\emptyset]]),
-
   _msnip({ trig = "kv1", descr = "Første kvadratsetning" },
     fmta(
       [[\left(<>+<>\right)^{2} = <>^{2} + 2 \cdot <> \cdot <> + <>^{2}]],
