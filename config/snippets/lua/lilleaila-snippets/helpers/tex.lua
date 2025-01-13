@@ -1,4 +1,5 @@
 require("lilleaila-snippets.helpers.ls").load_vars()
+local utils = require("lilleaila-snippets.helpers.utils")
 local ts_utils = require("nvim-treesitter.ts_utils")
 
 local M = {}
@@ -36,7 +37,7 @@ end
 -- math snippet
 local math_conditions = {
   snippetType = "autosnippet",
-  condition = M.in_math,
+  condition = utils.and_condition({ M.in_math, utils.word }),
   show_condition = M.in_math,
   hidden = true
 }
@@ -45,7 +46,7 @@ M._msnip = ls.extend_decorator.apply(s, math_conditions)
 -- text snippet
 local text_conditions = {
   snippetType = "autosnippet",
-  condition = M.in_text,
+  condition = utils.and_condition({ M.in_text, utils.word }),
   show_condition = M.in_text,
   wordTrig = true
 }
