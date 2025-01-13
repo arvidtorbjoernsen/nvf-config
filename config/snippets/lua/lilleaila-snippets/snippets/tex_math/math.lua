@@ -40,7 +40,7 @@ M = {
   masnip({ trig = "ln", name = "Natural logarithm" }, [[\ln{$1}]]),
   masnip({ trig = "lg", name = "10-logarithm" }, [[\lg{$1}]]),
   masnip({ trig = "log", name = "Logarithm" }, [[\log_{$1}]]),
-  _masnip({ trig = "vv", name = "Vector" }, fmta([[\vec{<>}]], { d(1, utils.vet_visual) })),
+  _masnip({ trig = "vv", name = "Vector" }, fmta([[\vec{<>}]], { d(1, utils.get_visual) })),
 
   msnip("pm", [[\pm]]),
   msnip("in", [[\in]]),

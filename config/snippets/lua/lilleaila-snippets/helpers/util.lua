@@ -1,5 +1,5 @@
 local ls = require("lilleaila-snippets.helpers.ls")
-local t, d, sn = ls.t, ls.d, ls.sn
+local t, i, sn = ls.t, ls.i, ls.sn
 
 M = {}
 

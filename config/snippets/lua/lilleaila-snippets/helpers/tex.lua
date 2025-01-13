@@ -57,18 +57,18 @@ M._masnip = ls.extend_decorator.apply(s, math_auto_conditions)
 
 -- text snippet
 local text_conditions = {
-  snippetType = "autosnippet",
   condition = utils.and_condition({ M.in_text, utils.word }),
   show_condition = M.in_text,
-  hidden = true,
   wordTrig = false
 }
 M.tasnip = ls.extend_decorator.apply(parse, text_conditions)
 M._tasnip = ls.extend_decorator.apply(s, text_conditions)
 -- text autosnippet
 local text_auto_conditions = {
+  snippetType = "autosnippet",
   condition = utils.and_condition({ M.in_text, utils.word }),
   show_condition = M.in_text,
+  hidden = true,
   wordTrig = false
 }
 M.tasnip = ls.extend_decorator.apply(parse, text_auto_conditions)
