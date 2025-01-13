@@ -4,10 +4,10 @@ local fmta, postfix = ls.fmta, ls.postfix
 
 local tex           = require("lilleaila-snippets.helpers.tex")
 local utils         = require("lilleaila-snippets.helpers.util")
-local tsnip         = tex.tsnip
-local _tsnip        = tex._tsnip
-local msnip         = tex.msnip
-local _msnip        = tex._msnip
+local tasnip         = tex.tasnip
+local _tasnip        = tex._tasnip
+local masnip         = tex.masnip
+local _masnip        = tex._masnip
 
 M                   = {
   postfix({ trig = "/", name = "fraction", condition = tex.in_math, snippetType = "autosnippet" },
@@ -18,7 +18,7 @@ M                   = {
           return parent.snippet.env.POSTFIX_MATCH
         end, {}), i(1)
       })),
-  _msnip({ trig = "ft", name = "fraction teller" },
+  _masnip({ trig = "ft", name = "fraction teller" },
     fmta(
       [[
       \frac{<>}{<>}<>
@@ -28,7 +28,7 @@ M                   = {
         i(1),
         i(0)
       })),
-  _msnip({ trig = "fn", name = "fraction nevner" },
+  _masnip({ trig = "fn", name = "fraction nevner" },
     fmta(
       [[
       \frac{<>}{<>}<>
@@ -38,7 +38,7 @@ M                   = {
         d(2, utils.get_visual),
         i(0)
       })),
-  msnip({ trig = "ff", name = "fraction" }, [[\frac{$1}{$2}]])
+  masnip({ trig = "ff", name = "fraction" }, [[\frac{$1}{$2}]])
 }
 
 return M

@@ -2,10 +2,10 @@ local ls = require("lilleaila-snippets.helpers.ls")
 local f, d, i, fmta = ls.f, ls.d, ls.i, ls.fmta
 local tex = require("lilleaila-snippets.helpers.tex")
 local utils = require("lilleaila-snippets.helpers.util")
-local tsnip = tex.tsnip
-local _tsnip = tex._tsnip
-local msnip = tex.msnip
-local _msnip = tex._msnip
+local tasnip = tex.tasnip
+local _tasnip = tex._tasnip
+local masnip = tex.masnip
+local _masnip = tex._masnip
 
 -- brackets
 -- maybe rename to use characters instead of symbols?
@@ -21,7 +21,7 @@ local brackets = {
 }
 
 M = {
-  _msnip({ trig = "lr([%(%[{<|dcf])", name = "left right", dscr = "left right delimiters", regTrig = true },
+  _masnip({ trig = "lr([%(%[{<|dcf])", name = "left right", dscr = "left right delimiters", regTrig = true },
     fmta(
       [[
       \left<> <> \right<><>
@@ -38,7 +38,7 @@ M = {
         end),
         i(0)
       })),
-  _msnip({ trig = "l([%(%[{<|dcf])", name = "left", dscr = "left delimiters", regTrig = true },
+  _masnip({ trig = "l([%(%[{<|dcf])", name = "left", dscr = "left delimiters", regTrig = true },
     fmta(
       [[
       \left<> <> \right.<>
@@ -51,7 +51,7 @@ M = {
         d(1, utils.get_visual),
         i(0)
       })),
-  _msnip({ trig = "r([%(%[{<|dcf])", name = "right", dscr = "right delimiters", regTrig = true },
+  _masnip({ trig = "r([%(%[{<|dcf])", name = "right", dscr = "right delimiters", regTrig = true },
     fmta(
       [[
       \left. <> \right<><>

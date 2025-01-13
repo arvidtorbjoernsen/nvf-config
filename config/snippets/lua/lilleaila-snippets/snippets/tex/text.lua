@@ -1,12 +1,12 @@
 local tex = require("lilleaila-snippets.helpers.tex")
 local utils = require("lilleaila-snippets.helpers.util")
-local tsnip = tex.tsnip
-local _tsnip = tex._tsnip
-local msnip = tex.msnip
-local _msnip = tex._msnip
+local tasnip = tex.tasnip
+local _tasnip = tex._tasnip
+local masnip = tex.masnip
+local _masnip = tex._masnip
 
 local M = {
-  tsnip({ trig = "!init!", name = "initialize new document" }, [[
+  tasnip({ trig = "!init!", name = "initialize new document" }, [[
     \newcommand*{\shared}{../shared}
     \input{\shared/p-document.tex}
 

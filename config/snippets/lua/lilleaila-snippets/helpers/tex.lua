@@ -37,31 +37,41 @@ function M.in_text()
 end
 
 -- math snippet
-local math_conditions = {
+local math_formula_conditions = {
+  condition = utils.and_condition({ M.in_math, utils.word }),
+  show_condition = M.in_math,
+  wordTrig = false,
+}
+M.msnip = ls.extend_decorator.apply(parse, math_formula_conditions)
+M._msnip = ls.extend_decorator.apply(s, math_formula_conditions)
+-- math autosnippet
+local math_auto_conditions = {
   snippetType = "autosnippet",
   condition = utils.and_condition({ M.in_math, utils.word }),
   show_condition = M.in_math,
   hidden = true,
   wordTrig = false
 }
-M.msnip = ls.extend_decorator.apply(parse, math_conditions)
-M._msnip = ls.extend_decorator.apply(s, math_conditions)
--- math formula snippet
-local math_formula_conditions = {
-  condition = utils.and_condition({ M.in_math, utils.word }),
-  show_condition = M.in_math,
-  wordTrig = false,
-}
-M.fsnip = ls.extend_decorator.apply(parse, math_formula_conditions)
-M._fsnip = ls.extend_decorator.apply(s, math_formula_conditions)
+M.masnip = ls.extend_decorator.apply(parse, math_auto_conditions)
+M._masnip = ls.extend_decorator.apply(s, math_auto_conditions)
+
 -- text snippet
 local text_conditions = {
   snippetType = "autosnippet",
   condition = utils.and_condition({ M.in_text, utils.word }),
   show_condition = M.in_text,
+  hidden = true,
   wordTrig = false
 }
-M.tsnip = ls.extend_decorator.apply(parse, text_conditions)
-M._tsnip = ls.extend_decorator.apply(s, text_conditions)
+M.tasnip = ls.extend_decorator.apply(parse, text_conditions)
+M._tasnip = ls.extend_decorator.apply(s, text_conditions)
+-- text autosnippet
+local text_auto_conditions = {
+  condition = utils.and_condition({ M.in_text, utils.word }),
+  show_condition = M.in_text,
+  wordTrig = false
+}
+M.tasnip = ls.extend_decorator.apply(parse, text_auto_conditions)
+M._tasnip = ls.extend_decorator.apply(s, text_auto_conditions)
 
 return M
