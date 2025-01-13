@@ -1,4 +1,4 @@
-require("lilleaila-snippets.helpers.ls").load_vars()
+local ls = require("lilleaila-snippets.helpers.ls")
 
 M = {}
 
@@ -31,14 +31,14 @@ end
 -- Something like this would also work: https://github.com/iurimateus/luasnip-latex-snippets.nvim/blob/4b91f28d91979f61a3e8aef1cee5b7c7f2c7beb8/lua/luasnip-latex-snippets/math_i.lua#L43
 function M.get_visual(args, parent)
   if #parent.snippet.env.SELECT_RAW > 0 then
-    return sn(nil, i(1, parent.snippet.env.SELECT_RAW))
+    return ls.sn(nil, i(1, parent.snippet.env.SELECT_RAW))
   else -- If SELECT_RAW is empty, return a blank insert node
-    return sn(nil, i(1))
+    return ls.sn(nil, i(1))
   end
 end
 
 function M.get_cap(index)
-  return f(function(_, snip)
+  return ls.f(function(_, snip)
     return snip.captures[index]
   end)
 end
@@ -52,6 +52,6 @@ function M.word(line_to_cursor, match)
 end
 
 -- autosnippet
-M.asnip = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
+M.asnip = ls.extend_decorator.apply(ls.s, { snippetType = "autosnippet" })
 
 return M

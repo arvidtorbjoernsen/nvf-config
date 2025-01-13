@@ -1,11 +1,11 @@
+local ls = require("lilleaila-snippets.helpers.ls")
+local i, rep, fmta = ls.i, ls.rep, ls.fmta
 local tex = require("lilleaila-snippets.helpers.tex")
 local utils = require("lilleaila-snippets.helpers.utils")
 local tsnip = tex.tsnip
 local _tsnip = tex._tsnip
 local msnip = tex.msnip
 local _msnip = tex._msnip
-
-require("lilleaila-snippets.helpers.ls").load_vars()
 
 return {
   _msnip({ trig = "kv1", descr = "Første kvadratsetning" },
@@ -26,6 +26,6 @@ return {
   _msnip({ trig = "abc", descr = "ABC-formelen" },
     fmta(
       [[x = \frac{-<> \pm \sqrt{<>^{2} - 4 \cdot <> \cdot <>}}{2 \cdot <>} ]],
-      {i(2, "b"), rep(2), rep(1), i(3, "c"), i(1, "a")}
+      { i(2, "b"), rep(2), rep(1), i(3, "c"), i(1, "a") }
     )),
 }

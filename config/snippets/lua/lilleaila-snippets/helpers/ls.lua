@@ -1,39 +1,36 @@
 local M = {}
 
--- This is not the cleanest way to do it at all, but it makes it a bit easier to use the variables in snippets
--- FIXME: don't pollute the global namespace
-function M.load_vars()
-  local ls = require("luasnip")
-  local extras = require("luasnip.extras")
-  local fmt = require("luasnip.extras.fmt")
+local ls = require("luasnip")
+local extras = require("luasnip.extras")
+local fmt = require("luasnip.extras.fmt")
 
-  _G.ls = ls
-  _G.extras = extras
-  _G.s = ls.snippet
-  _G.sn = ls.snippet_node
-  _G.isn = ls.indent_snippet_node
-  _G.t = ls.text_node
-  _G.i = ls.insert_node
-  _G.f = ls.function_node
-  _G.c = ls.choice_node
-  _G.d = ls.dynamic_node
-  _G.r = ls.restore_node
-  _G.l = extras.lambda
-  _G.events = require("luasnip.util.events")
-  _G.ai = require("luasnip.nodes.absolute_indexer")
-  _G.extras = require("luasnip.extras")
-  _G.rep = extras.rep
-  _G.p = extras.partial
-  _G.m = extras.match
-  _G.n = extras.nonempty
-  _G.dl = extras.dynamic_lambda
-  _G.fmt = fmt.fmt
-  _G.fmta = fmt.fmta
-  _G.conds = require("luasnip.extras.expand_conditions")
-  _G.postfix = require("luasnip.extras.postfix").postfix
-  _G.types = require("luasnip.util.types")
-  _G.parse = require("luasnip.util.parser").parse_snippet
-  _G.ms = ls.multi_snippet
-end
+M.ls = ls
+M.extras = extras
+M.s = ls.snippet
+M.sn = ls.snippet_node
+M.isn = ls.indent_snippet_node
+M.t = ls.text_node
+M.i = ls.insert_node
+M.f = ls.function_node
+M.c = ls.choice_node
+M.d = ls.dynamic_node
+M.r = ls.restore_node
+M.l = extras.lambda
+M.events = require("luasnip.util.events")
+M.ai = require("luasnip.nodes.absolute_indexer")
+M.extras = require("luasnip.extras")
+M.rep = extras.rep
+M.p = extras.partial
+M.m = extras.match
+M.n = extras.nonempty
+M.dl = extras.dynamic_lambda
+M.fmt = fmt.fmt
+M.fmta = fmt.fmta
+M.conds = require("luasnip.extras.expand_conditions")
+M.postfix = require("luasnip.extras.postfix").postfix
+M.types = require("luasnip.util.types")
+M.parse = require("luasnip.util.parser").parse_snippet
+M.ms = ls.multi_snippet
+M.extend_decorator = ls.extend_decorator
 
 return M

@@ -5,8 +5,6 @@ local _tsnip = tex._tsnip
 local msnip = tex.msnip
 local _msnip = tex._msnip
 
-require("lilleaila-snippets.helpers.ls").load_vars()
-
 local M = {
   tsnip({ trig = "cc", name = "code block" }, [[
     ```$1

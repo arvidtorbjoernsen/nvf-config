@@ -1,13 +1,15 @@
-local tex = require("lilleaila-snippets.helpers.tex")
-local utils = require("lilleaila-snippets.helpers.utils")
-local tsnip = tex.tsnip
-local _tsnip = tex._tsnip
-local msnip = tex.msnip
-local _msnip = tex._msnip
+local ls            = require("lilleaila-snippets.helpers.ls")
+local i, d, f       = ls.i, ls.d, ls.f
+local fmta, postfix = ls.fmta, ls.postfix
 
-require("lilleaila-snippets.helpers.ls").load_vars()
+local tex           = require("lilleaila-snippets.helpers.tex")
+local utils         = require("lilleaila-snippets.helpers.utils")
+local tsnip         = tex.tsnip
+local _tsnip        = tex._tsnip
+local msnip         = tex.msnip
+local _msnip        = tex._msnip
 
-M = {
+M                   = {
   postfix({ trig = "/", name = "fraction", condition = tex.in_math, snippetType = "autosnippet" },
     fmta(
       [[\frac{<>}{<>}]],
