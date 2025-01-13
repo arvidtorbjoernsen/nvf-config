@@ -39,7 +39,8 @@ local math_conditions = {
   snippetType = "autosnippet",
   condition = utils.and_condition({ M.in_math, utils.word }),
   show_condition = M.in_math,
-  hidden = true
+  hidden = true,
+  wordTrig = false
 }
 M.msnip = ls.extend_decorator.apply(parse, math_conditions)
 M._msnip = ls.extend_decorator.apply(s, math_conditions)
@@ -48,7 +49,7 @@ local text_conditions = {
   snippetType = "autosnippet",
   condition = utils.and_condition({ M.in_text, utils.word }),
   show_condition = M.in_text,
-  wordTrig = true
+  wordTrig = false
 }
 M.tsnip = ls.extend_decorator.apply(parse, text_conditions)
 M._tsnip = ls.extend_decorator.apply(s, text_conditions)

@@ -8,16 +8,13 @@ local _msnip = tex._msnip
 require("lilleaila-snippets.helpers.ls").load_vars()
 
 M = {
-  _msnip({ trig = "(%s)([^%s]-)/", name = "fraction", regTrig = true, wordTrig = false },
+  postfix({ trig = "/", name = "fraction", condition = tex.in_math, snippetType = "autosnippet" },
     fmta(
-      [[
-      <>\frac{<>}{<>}<>
-    ]],
+      [[\frac{<>}{<>}]],
       {
-        f(function(_, snip) return snip.captures[1] end),
-        f(function(_, snip) return snip.captures[2] end),
-        i(1),
-        i(0)
+        f(function(_, parent)
+          return parent.snippet.env.POSTFIX_MATCH
+        end, {}), i(1)
       })),
   _msnip({ trig = "ft", name = "fraction teller" },
     fmta(
