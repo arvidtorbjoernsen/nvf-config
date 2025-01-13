@@ -32,12 +32,11 @@
         key = "<tab>";
         lua = true;
         expr = true;
-        noremap = true;
         action = # lua
           ''
             function()
               local ls = require("luasnip")
-              if ls.expand_or_jumpable() then
+              if ls.expand_or_locally_jumpable() then
                 vim.schedule(function()
                   ls.expand_or_jump()
                 end)
@@ -48,16 +47,22 @@
             end
           '';
       }
-      # FIXME: does not seem to work
-      (util.mkLuaKeymap' "i" "<S-tab>" # lua
-        ''
-          function()
-            vim.schedule(function()
-              require("luasnip").jump(-1)
-            end)
-          end
-        ''
-      )
+      {
+        mode = "i";
+        key = "<S-tab>";
+        lua = true;
+        action = # lua
+          ''
+            function()
+              local ls = require("luasnip")
+              if ls.jumpable(-1) then
+                vim.schedule(function()
+                  ls.jump(-1)
+                end)
+              end
+            end
+          '';
+      }
     ];
   };
 }
