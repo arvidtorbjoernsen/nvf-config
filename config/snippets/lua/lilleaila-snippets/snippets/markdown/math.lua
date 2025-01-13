@@ -16,6 +16,11 @@ local M = {
     $$
   ]]),
   _msnip({ trig = "aa", name = "answer" }, fmta([[\underline{\underline{<>}}]], { d(1, utils.get_visual) })),
+  msnip({ trig = "ma", name = "aligned math" }, [[
+    \begin{align}
+      $1&$2 & $3
+    \end{align}
+  ]])
 }
 
 return M

@@ -46,6 +46,14 @@ local math_conditions = {
 }
 M.msnip = ls.extend_decorator.apply(parse, math_conditions)
 M._msnip = ls.extend_decorator.apply(s, math_conditions)
+-- math formula snippet
+local math_formula_conditions = {
+  condition = utils.and_condition({ M.in_math, utils.word }),
+  show_condition = M.in_math,
+  wordTrig = false,
+}
+M.fsnip = ls.extend_decorator.apply(parse, math_formula_conditions)
+M._fsnip = ls.extend_decorator.apply(s, math_formula_conditions)
 -- text snippet
 local text_conditions = {
   snippetType = "autosnippet",
