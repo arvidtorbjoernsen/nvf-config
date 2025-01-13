@@ -35,15 +35,12 @@
 
     visuals = {
       nvim-web-devicons.enable = true;
-      nvim-cursorline.enable = true;
       fidget-nvim.enable = true;
-      highlight-undo.enable = true;
       indent-blankline.enable = true;
     };
 
     ui = {
       # noice.enable = true;
-      modes-nvim.enable = true;
     };
 
   };
