@@ -35,13 +35,7 @@
 
     visuals = {
       nvim-web-devicons.enable = true;
-      fidget-nvim.enable = true;
       indent-blankline.enable = true;
     };
-
-    ui = {
-      # noice.enable = true;
-    };
-
   };
 }
