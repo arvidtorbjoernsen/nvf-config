@@ -28,7 +28,10 @@ return {
   msnip({ trig = "fsinb", descr = "Sinussetningen med sinus i teller" }, [[
     \frac{\sin{$1}}{$1} = \frac{\sin{$2}}{$2} = \frac{\sin{$3}}{$3}
   ]]),
-  msnip({ trig = "fcos", desct = "Cosinussetningen" }, [[
+  msnip({ trig = "fcos", descr = "Cosinussetningen" }, [[
     $1 ^{2} = $2 ^{2} + $3 ^{2} - 2 \cdot $2 \cdot $3 \cos{$4}
-  ]])
+  ]]),
+  msnip({ trig = "fder", descr = "Definisjonen av den deriverte" }, [[
+    \lim_{ h \to 0 } \frac{ f \left( x + h \right) - f \left( x \right) }{h}
+  ]]),
 }
