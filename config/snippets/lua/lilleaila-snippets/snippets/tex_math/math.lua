@@ -41,6 +41,8 @@ M = {
   masnip({ trig = "lg", name = "10-logarithm" }, [[\lg{$1}]]),
   masnip({ trig = "log", name = "Logarithm" }, [[\log_{$1}]]),
   _masnip({ trig = "vv", name = "Vector" }, fmta([[\vec{<>}]], { d(1, utils.get_visual) })),
+  _masnip({ trig = "sin", name = "Sine" }, fmta([[\sin{<>}]], { d(1, utils.get_visual) })),
+  _masnip({ trig = "cos", name = "Cosine" }, fmta([[\cos{<>}]], { d(1, utils.get_visual) })),
 
   msnip("pm", [[\pm]]),
   msnip("in", [[\in]]),
@@ -52,7 +54,12 @@ M = {
   msnip("ø", [[\emptyset]]),
   msnip("oo", [[\infty]]),
   msnip("sm", [[\setminus]]),
+  msnip("pi", [[\pi]]),
+  msnip("perp", [[\perp]]),
 
+  msnip("alpha", [[\alpha]]),
+  msnip("Delta", [[\Delta]]),
+  msnip("theta", [[\theta]]),
 
   postfix({ trig = "vv", name = "vector", condition = tex.in_math, snippetType = "autosnippet" },
     fmta(
