@@ -54,6 +54,13 @@ M = {
   msnip("sm", [[\setminus]]),
 
 
+  postfix({ trig = "vv", name = "vector", condition = tex.in_math, snippetType = "autosnippet" },
+    fmta(
+      [[\vec{<>}]],
+      {
+        d(1, utils.postfix_match)
+      })),
+
   postfix({ trig = "inv", name = "inverse function", condition = tex.in_math, snippetType = "autosnippet" },
     fmta(
       [[<>^{-1}]],
