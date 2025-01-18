@@ -4,15 +4,20 @@
     binds.whichKey = {
       enable = true;
       register = {
-        "<leader>f" = "Pickers";
-        "<leader>g" = "Git";
-        "<leader>d" = "Debugger";
-        "<leader>l" = "LSP";
+        "<leader>f" = " Picker";
+        "<leader>g" = " Git";
+        "<leader>d" = " Debug";
+        "<leader>l" = " LSP";
+        "<leader>b" = " Buffer";
       };
       setupOpts = {
         preset = "classic";
         delay = 0;
-        icons.mappings = false;
+        icons = {
+          mappings = false;
+          separator = "➜";
+          group = "";
+        };
         win.border = "none";
         triggers = [
           {

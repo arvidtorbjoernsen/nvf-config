@@ -139,7 +139,7 @@ in
     };
 
     binds.whichKey.register = {
-      "<leader>o" = "Obsidian";
+      "<leader>o" = " Obsidian";
     };
 
     keymaps = [
