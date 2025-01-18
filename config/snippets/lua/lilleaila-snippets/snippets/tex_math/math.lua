@@ -18,10 +18,6 @@ M = {
     \\\\
     $1&$2 & $0
   ]]),
-  masnip({ trig = "na", name = "newline with answer" }, [[
-    \\\\
-    \ans{$1&$2} & $0
-  ]]),
 
   msnip({ trig = "lim", descr = "Limit" }, [[\lim_{$1 \to $2}]]),
   msnip({ trig = "lx", descr = "Limit" }, [[\lim_{x \to $1}]]),
