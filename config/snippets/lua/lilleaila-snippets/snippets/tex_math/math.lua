@@ -12,6 +12,8 @@ local msnip = tex.masnip
 local _msnip = tex._masnip
 
 M = {
+  masnip({ trig = "tt", name = "Text" }, [[\text{$1}]]),
+
   -- align-environments
   -- for some reason \\ expands to \ even when it's inside [[]] /shrug
   masnip({ trig = "nn", name = "newline" }, [[
