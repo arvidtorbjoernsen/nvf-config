@@ -138,10 +138,6 @@ in
       };
     };
 
-    binds.whichKey.register = {
-      "<leader>o" = " Obsidian";
-    };
-
     keymaps = [
       (util.mkKeymap "n" "<leader>od" ":ObsidianToday<cr>" "Daily note")
       (util.mkKeymap "n" "<leader>oD" ":ObsidianDailies<cr>" "Daily note history")
