@@ -27,8 +27,8 @@ M = {
   msnip({ trig = "l0", descr = "Limit" }, [[\lim_{x \to 0}]]),
 
   masnip({ trig = "*", name = "multiplication" }, [[\cdot]]),
-  _masnip({ trig = "^", name = "exponent" }, fmta([[^{<>}]], { d(1, utils.get_visual) })),
-  _masnip({ trig = "_", name = "subscript" }, fmta([[_{<>}]], { d(1, utils.get_visual) })),
+  _masnip({ trig = "^", name = "exponent", condition = tex.in_math }, fmta([[^{<>}]], { d(1, utils.get_visual) })),
+  _masnip({ trig = "_", name = "subscript", condition = tex.in_math }, fmta([[_{<>}]], { d(1, utils.get_visual) })),
   _masnip({ trig = "su", name = "underset" }, fmta([[\underset{<>}{<>}]], { i(1), d(2, utils.get_visual) })),
   _masnip({ trig = "so", name = "overset" }, fmta([[\overset{<>}{<>}]], { i(1), d(2, utils.get_visual) })),
   _masnip({ trig = "bo", name = "overbrace" }, fmta([[\overbrace{<>}^{<>}]], { d(1, utils.get_visual), i(2) })),
