@@ -10,14 +10,14 @@ local _masnip = tex._masnip
 -- brackets
 -- maybe rename to use characters instead of symbols?
 local brackets = {
-  ["p"] = { "(", ")" },
-  ["b"] = { "[", "]" },
-  ["B"] = { "\\{", "\\}" },
+  ["p"] = { "(", ")" },     -- Parentheses
+  ["b"] = { "[", "]" },     -- Brackets
+  ["c"] = { "\\{", "\\}" }, -- Curly brackets
   ["<"] = { "\\langle", "\\rangle" },
   ["|"] = { "|", "|" },
-  ["d"] = { "\\|", "\\|" },
-  ["c"] = { "\\lceil", "\\rceil" },
-  ["f"] = { "\\lceil", "\\rceil" },
+  ["t"] = { "\\|", "\\|" },         -- Two pipes
+  ["u"] = { "\\lceil", "\\rceil" }, -- round Up
+  ["d"] = { "\\lceil", "\\rceil" }, -- round Down
   ["."] = { ".", "." },
 }
 
