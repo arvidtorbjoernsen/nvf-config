@@ -8,6 +8,7 @@
     ./languages
     ./notes
     ./snippets
+    ./mini.nix
   ];
 
   _module.args.colorScheme' = lib.attrsets.mapAttrs (_: value: "#${value}") colorScheme.palette;
