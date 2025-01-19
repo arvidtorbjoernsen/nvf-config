@@ -321,6 +321,7 @@
         "plugin-precognition-nvim": "plugin-precognition-nvim",
         "plugin-project-nvim": "plugin-project-nvim",
         "plugin-promise-async": "plugin-promise-async",
+        "plugin-rainbow-delimiters": "plugin-rainbow-delimiters",
         "plugin-registers": "plugin-registers",
         "plugin-render-markdown-nvim": "plugin-render-markdown-nvim",
         "plugin-rose-pine": "plugin-rose-pine",
@@ -348,11 +349,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1737280815,
-        "narHash": "sha256-AhQSAlpWkVXY4dVqjPOz9+DfbSXUySCw5Dr1hegjmEE=",
+        "lastModified": 1737313664,
+        "narHash": "sha256-WIVEbeD6ftppvwSxX8f0qk7HefjsqGgjx+IkSdiAmdE=",
         "owner": "notashelf",
         "repo": "nvf",
-        "rev": "779af80bf2149eb72ed58665ff957a778eb24ddf",
+        "rev": "c002e8f572ad4753e6fa5411c4cf7ed5659da688",
         "type": "github"
       },
       "original": {
@@ -2632,6 +2633,22 @@
       "original": {
         "owner": "kevinhwang91",
         "repo": "promise-async",
+        "type": "github"
+      }
+    },
+    "plugin-rainbow-delimiters": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1736686348,
+        "narHash": "sha256-zWHXYs3XdnoszqOFY3hA2L5mNn1a44OAeKv3lL3EMEw=",
+        "owner": "HiPhish",
+        "repo": "rainbow-delimiters.nvim",
+        "rev": "85b80abaa09cbbc039e3095b2f515b3cf8cadd11",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HiPhish",
+        "repo": "rainbow-delimiters.nvim",
         "type": "github"
       }
     },
