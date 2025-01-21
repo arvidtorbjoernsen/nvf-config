@@ -1,18 +1,15 @@
 {
   lib,
   util,
-  colorScheme',
   ...
-}:
-let
+}: let
   vault_path = "notes/obsidian";
-in
-{
+in {
   vim = {
     notes.obsidian = {
       enable = true;
       setupOpts = {
-        mappings = [ ];
+        mappings = [];
         log_level = lib.generators.mkLuaInline "vim.log.levels.ERROR";
 
         workspaces = [
@@ -26,7 +23,7 @@ in
         daily_notes = {
           folder = "Daily";
           date_format = "%Y-%m-%d";
-          default_tags = [ "daily-notes" ];
+          default_tags = ["daily-notes"];
         };
 
         picker = {
@@ -43,97 +40,87 @@ in
         disable_frontmatter = false;
         note_frontmatter_func =
           lib.generators.mkLuaInline # lua
-            ''
-              function (note)
-                if note.title then
-                  note:add_alias(note.title)
-                end
-
-                local out = { id = note.id, aliases = note.aliases, tags = note.tags }
-
-                if not note.date then
-                  local date = tostring(os.date("%Y-%m-%d"))
-                  out.date = date
-                end
-
-                if note.title then
-                  out.title = note.title
-                end
-
-                -- Keep existing items
-                if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-                  for k, v in pairs(note.metadata) do
-                    out[k] = v
-                  end
-                end
-
-                return out
+          
+          ''
+            function (note)
+              if note.title then
+                note:add_alias(note.title)
               end
-            '';
+
+              local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+
+              if not note.date then
+                local date = tostring(os.date("%Y-%m-%d"))
+                out.date = date
+              end
+
+              if note.title then
+                out.title = note.title
+              end
+
+              -- Keep existing items
+              if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+                for k, v in pairs(note.metadata) do
+                  out[k] = v
+                end
+              end
+
+              return out
+            end
+          '';
 
         note_id_func =
           lib.generators.mkLuaInline # lua
-            ''
-              function(title)
-                local name = ""
-                if title ~= nil then
-                  name = title
-                else
-                  -- Ask the user for a name
-                  name = vim.fn.input("Enter note name: ")
-                  if name == "" then
-                    -- If no name is given, generate a random one.
-                    for _ = 1, 5 do
-                      name = name .. string.char(math.random(65, 90))
-                    end
+          
+          ''
+            function(title)
+              local name = ""
+              if title ~= nil then
+                name = title
+              else
+                -- Ask the user for a name
+                name = vim.fn.input("Enter note name: ")
+                if name == "" then
+                  -- If no name is given, generate a random one.
+                  for _ = 1, 5 do
+                    name = name .. string.char(math.random(65, 90))
                   end
                 end
-                -- transform the name into a valid file name and append the date in ISO 8601 format
-                local suffix = name:gsub(" ", "-"):lower():gsub("[^a-z0-9-æøå]", "")
-                return tostring(os.date("%Y%m%dT%H%M")) .. "-" .. suffix
               end
-            '';
+              -- transform the name into a valid file name and append the date in ISO 8601 format
+              local suffix = name:gsub(" ", "-"):lower():gsub("[^a-z0-9-æøå]", "")
+              return tostring(os.date("%Y%m%dT%H%M")) .. "-" .. suffix
+            end
+          '';
 
         follow_url_func =
           lib.generators.mkLuaInline # lua
-            ''
-              function(url)
-                vim.fn.jobstart({"wl-copy", url})
-                vim.fn.jobstart({"notify-send", "Copied " .. url .. " to clipboard."})
-              end
-            '';
+          
+          ''
+            function(url)
+              vim.fn.jobstart({"wl-copy", url})
+              vim.fn.jobstart({"notify-send", "Copied " .. url .. " to clipboard."})
+            end
+          '';
 
         follow_img_func =
           lib.generators.mkLuaInline # lua
-            ''
-              function(url)
-                vim.ui.open(url)
-              end
-            '';
+          
+          ''
+            function(url)
+              vim.ui.open(url)
+            end
+          '';
 
         attachments = {
           img_name_func =
             lib.generators.mkLuaInline # lua
-              ''
-                function()
-                  return tostring(os.date("%Y%m%dT%H%M")) .. "-"
-                end
-              '';
-        };
-
-        ui.hl_groups = with colorScheme'; {
-          ObsidianTodo.fg = base0A;
-          ObsidianDone.fg = base0B;
-          ObsidianRightArrow.fg = base09;
-          # ObsidianTilde.fg = base0F;
-          # ObsidianImportant.fg = base08;
-          ObsidianBullet.fg = base0D;
-          ObsidianRefText.fg = base0E;
-          ObsidianExtLinkIcon.fg = base0E;
-          ObsidianTag.fg = base0C;
-          ObsidianBlockID.fg = base0C;
-          ObsidianHighlightText.bg = base0A;
-          ObsidianHighlightText.fg = base01;
+            
+            ''
+              function()
+                return tostring(os.date("%Y%m%dT%H%M")) .. "-"
+              end
+            '';
         };
       };
     };
@@ -164,15 +151,16 @@ in
           clear_in_insert_mode = true;
           resolve_image_path =
             lib.generators.mkLuaInline # lua
-              ''
-                function(document_path, image_path, fallback)
-                  if string.find(document_path, "${vault_path}") then
-                    return os.getenv("HOME") .. "/${vault_path}/" .. image_path
-                  else
-                    return fallback(document_path, image_path)
-                  end
+            
+            ''
+              function(document_path, image_path, fallback)
+                if string.find(document_path, "${vault_path}") then
+                  return os.getenv("HOME") .. "/${vault_path}/" .. image_path
+                else
+                  return fallback(document_path, image_path)
                 end
-              '';
+              end
+            '';
         };
       };
     };

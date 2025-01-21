@@ -1,22 +1,25 @@
-{ lib, colorScheme', ... }:
 {
   vim = {
+    statusline = {
+      lualine = {
+        enable = true;
+        theme = "catppuccin";
+      };
+    };
+
     theme = {
       enable = true;
-      # Looks bad :(
-      # name = "base16";
-      # base16-colors = colorScheme.palette;
-      name = "gruvbox";
-      style = "dark";
+      name = "catppuccin";
+      style = "mocha";
+      transparent = true;
     };
 
     visuals = {
+      nvim-scrollbar.enable = false;
       nvim-web-devicons.enable = true;
+      nvim-cursorline.enable = true;
       rainbow-delimiters.enable = true;
+      highlight-undo.enable = true;
     };
-
-    luaConfigRC.highlights = lib.nvim.dag.entryAnywhere ''
-      vim.api.nvim_set_hl(0, "SignColumn", {bg = "${colorScheme'.base00}"})
-    '';
   };
 }

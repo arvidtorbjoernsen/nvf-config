@@ -1,10 +1,8 @@
 {
   util,
   lib,
-  colorScheme',
   ...
-}:
-{
+}: {
   vim = {
     mini = {
       icons.enable = true;
@@ -33,34 +31,18 @@
       };
       hipatterns = {
         enable = true;
-        setupOpts.highlighters =
-          let
-            mkPattern = pattern: "%f[%w]()${pattern}()%f[%W]";
-            mkHi = pattern: group: {
-              inherit group;
-              pattern = mkPattern pattern;
-            };
-          in
-          {
-            todo = mkHi "TODO" "MiniHipatternsTodo";
-            hack = mkHi "HACK" "MiniHipatternsHack";
-            note = mkHi "NOTE" "MiniHipatternsNote";
-            fixme = mkHi "FIXME" "MiniHipatternsFixme";
-            hex_color = lib.generators.mkLuaInline ''require("mini.hipatterns").gen_highlighter.hex_color()'';
-            base16_color =
-              lib.generators.mkLuaInline # lua
-                ''
-                  {
-                    pattern = "base0[%dA-F]",
-                    group = function(_, match)
-                      local words = ${lib.nvim.lua.toLuaObject colorScheme'}
-                      local hex = words[match]
-                      if hex == nil then return nil end
-                      return MiniHipatterns.compute_hex_color_group(hex, bg)
-                    end,
-                  }
-                '';
+        setupOpts.highlighters = let
+          mkPattern = pattern: "%f[%w]()${pattern}()%f[%W]";
+          mkHi = pattern: group: {
+            inherit group;
+            pattern = mkPattern pattern;
           };
+        in {
+          todo = mkHi "TODO" "MiniHipatternsTodo";
+          hack = mkHi "HACK" "MiniHipatternsHack";
+          note = mkHi "NOTE" "MiniHipatternsNote";
+          fixme = mkHi "FIXME" "MiniHipatternsFixme";
+        };
       };
       comment.enable = true;
       move.enable = true;

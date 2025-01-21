@@ -1,6 +1,7 @@
-{ colorScheme, lib, ... }:
 {
   imports = [
+    ./dashboard.nix
+    ./filetree.nix
     ./options.nix
     ./visual.nix
     ./binds.nix
@@ -11,7 +12,6 @@
     ./mini.nix
   ];
 
-  _module.args.colorScheme' = lib.attrsets.mapAttrs (_: value: "#${value}") colorScheme.palette;
   _module.args.util = import ./util.nix;
 
   vim = {
