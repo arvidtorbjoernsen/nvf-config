@@ -1,7 +1,10 @@
-{ util, ... }:
-{
+{util, ...}: {
   vim = {
-    # Plugin does not exist in nvf
+    telescope.enable = true;
+    projects = {
+      project-nvim.enable = true;
+    };
+
     fzf-lua = {
       enable = true;
       profile = "default-title";

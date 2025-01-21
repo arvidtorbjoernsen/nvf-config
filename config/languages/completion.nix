@@ -35,17 +35,17 @@
             in
             {
               preset = "none";
-              "<C-j>" = fallback "select_next";
-              "<C-k>" = fallback "select_prev";
-              "<CS-j>" = fallback "scroll_documentation_down";
-              "<CS-k>" = fallback "scroll_documentation_up";
-              "<C-space>" = [
+              "<Tab>" = fallback "select_next";
+              "<S-Tab>" = fallback "select_prev";
+              "<S-Down>" = fallback "scroll_documentation_down";
+              "<S-Up>" = fallback "scroll_documentation_up";
+              "<S-space>" = [
                 "show"
                 "show_documentation"
                 "hide_documentation"
               ];
               "<C-e>" = [ "hide" ];
-              "<C-y>" = [ "select_and_accept" ];
+              "<CR>" = [ "select_and_accept" ];
             };
 
           snippets.preset = "luasnip";

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     ./completion.nix
   ];
@@ -27,16 +26,28 @@
         format.type = "prettierd";
         format.enable = false;
       };
-      ts.enable = true;
-      python.enable = true;
-      html.enable = true;
+      bash.enable = true;
+      clang.enable = true;
       css.enable = true;
-      tailwind.enable = true;
+      html.enable = true;
+      sql.enable = true;
+      java.enable = true;
+      kotlin.enable = true;
+      ts.enable = true;
+      go.enable = true;
       lua.enable = true;
-      haskell.enable = true;
+      zig.enable = true;
+      python.enable = true;
+      typst.enable = true;
+      rust = {
+        enable = true;
+        crates.enable = true;
+      };
+      csharp.enable = true;
+      dart.enable = true;
+      ruby.enable = false;
+      tailwind.enable = true;
       svelte.enable = true;
-      astro.enable = true;
-      rust.enable = true;
     };
 
     lsp = {
@@ -45,6 +56,8 @@
       trouble.enable = true;
       lspSignature.enable = true;
       otter-nvim.enable = true;
+      lsplines.enable = true;
+      nvim-docs-view.enable = true;
     };
 
     debugger = {
@@ -54,17 +67,11 @@
       };
     };
 
-    # startPlugins = [ pkgs.vimPlugins.nvim-treesitter.withAllGrammars ];
-
     treesitter = {
       enable = true;
       addDefaultGrammars = true;
       autotagHtml = true;
-      # Maybe just install every single one?
-      grammars = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-        yaml # Affects obsidian note frontmatter
-        latex
-      ];
+      context.enable = true;
     };
   };
 }

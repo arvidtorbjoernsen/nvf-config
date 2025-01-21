@@ -7,11 +7,8 @@
     mini = {
       icons.enable = true;
       statusline.enable = true;
-      tabline.enable = true;
-      git.enable = true;
       diff.enable = true;
       align.enable = true;
-      notify.enable = true;
       files.enable = true;
       indentscope = {
         enable = true;

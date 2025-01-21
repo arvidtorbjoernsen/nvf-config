@@ -1,11 +1,12 @@
+{ pkgs, ... }:
 {
   imports = [
-    ./dashboard.nix
-    ./filetree.nix
+    ./ui.nix
     ./options.nix
     ./visual.nix
     ./binds.nix
     ./picker.nix
+    ./git.nix
     ./languages
     ./notes
     ./snippets
@@ -18,5 +19,15 @@
     viAlias = true;
     vimAlias = true;
     enableLuaLoader = true;
+    autopairs.nvim-autopairs.enable = true;
+
+    startPlugins = [
+      "friendly-snippets"
+      "nvim-neoclip"
+      "cheatsheet-nvim"
+      "dressing-nvim"
+
+      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+    ];
   };
 }
