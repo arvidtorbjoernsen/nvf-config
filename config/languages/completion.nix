@@ -26,27 +26,7 @@
         setupModule = "blink.cmp";
 
         setupOpts = {
-          keymap =
-            let
-              fallback = a: [
-                a
-                "fallback"
-              ];
-            in
-            {
-              preset = "none";
-              "<Tab>" = fallback "select_next";
-              "<S-Tab>" = fallback "select_prev";
-              "<S-Down>" = fallback "scroll_documentation_down";
-              "<S-Up>" = fallback "scroll_documentation_up";
-              "<S-space>" = [
-                "show"
-                "show_documentation"
-                "hide_documentation"
-              ];
-              "<C-e>" = [ "hide" ];
-              "<CR>" = [ "select_and_accept" ];
-            };
+          keymap.preset = "enter";
 
           snippets.preset = "luasnip";
 
