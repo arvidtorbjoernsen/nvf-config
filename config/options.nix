@@ -33,6 +33,7 @@
       foldlevelstart = 99;
 
       # Misc
+      writebackup = false;
       termguicolors = true;
       timeoutlen = 1000;
       scrolloff = 4;
