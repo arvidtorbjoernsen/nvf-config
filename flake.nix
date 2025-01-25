@@ -18,7 +18,6 @@
       url = "github:ribru17/blink-cmp-spell";
       flake = false;
     };
-
   };
 
   outputs =
