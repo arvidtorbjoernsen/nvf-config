@@ -43,7 +43,7 @@
         enable = true;
         crates.enable = true;
       };
-      csharp.enable = true;
+      # csharp.enable = true;
       dart.enable = true;
       ruby.enable = false;
       tailwind.enable = true;
