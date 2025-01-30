@@ -44,7 +44,7 @@
         enable = true;
         crates.enable = true;
       };
-      csharp.enable = true;
+      csharp.enable = false; # added with nix for aarch64
       dart.enable = true;
       ruby.enable = false;
       tailwind.enable = true;
