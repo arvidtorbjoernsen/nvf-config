@@ -23,7 +23,7 @@
         # event = [ "LspAttach" ];
         # ft = [ "markdown" ];
         event = [ "BufEnter" ];
-        setupModule = "blink.cmp";
+        setupModule = "blinkmp";
 
         setupOpts = {
           keymap.preset = "enter";

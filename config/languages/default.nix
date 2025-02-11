@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./completion.nix
+#    ./completion.nix
   ];
 
   vim = {
@@ -38,7 +38,7 @@
       go.enable = true;
       lua.enable = true;
       zig.enable = true;
-      # python.enable = true;
+      python.enable = true;
       typst.enable = true;
       rust = {
         enable = true;

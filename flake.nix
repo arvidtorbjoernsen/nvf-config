@@ -2,7 +2,7 @@
   description = "My standalone neovim configuration in nvf";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     systems.url = "github:nix-systems/default";
 
     nvf = {
