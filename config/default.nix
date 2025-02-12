@@ -23,7 +23,7 @@
 
     startPlugins = [
       "friendly-snippets"
-      "nvim-neoclip"
+      "nvim-neoclip-lua"
       "cheatsheet-nvim"
       "dressing-nvim"
 

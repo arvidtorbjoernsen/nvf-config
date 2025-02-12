@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-#    ./completion.nix
+    ./completion.nix
   ];
 
   vim = {
@@ -44,9 +44,9 @@
         enable = true;
         crates.enable = true;
       };
-      csharp.enable = false; # added with nix for aarch64
-      dart.enable = true;
-      ruby.enable = false;
+      # csharp.enable = true;
+      # dart.enable = true;
+      # ruby.enable = false;
       tailwind.enable = true;
       svelte.enable = true;
     };
