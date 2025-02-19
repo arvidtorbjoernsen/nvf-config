@@ -23,12 +23,14 @@
         # event = [ "LspAttach" ];
         # ft = [ "markdown" ];
         event = [ "BufEnter" ];
-        setupModule = "blinkmp";
+        setupModule = "blink.cmp";
 
         setupOpts = {
           keymap.preset = "enter";
 
           snippets.preset = "luasnip";
+
+          cmdline.sources = [ ];
 
           sources = {
             default = [
@@ -38,7 +40,6 @@
               "buffer"
               "emoji"
             ];
-            cmdline = [ ];
 
             providers = {
               emoji = {

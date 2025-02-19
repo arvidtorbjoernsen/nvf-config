@@ -44,9 +44,9 @@
         enable = true;
         crates.enable = true;
       };
-      # csharp.enable = true;
+      csharp.enable = if pkgs.stdenv.isLinux then true else false;
       # dart.enable = true;
-      # ruby.enable = false;
+      ruby.enable = false;
       tailwind.enable = true;
       svelte.enable = true;
     };

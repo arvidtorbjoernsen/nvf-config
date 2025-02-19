@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   outputs,
+  system,
   ...
 }:
 

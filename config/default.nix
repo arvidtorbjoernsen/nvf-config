@@ -26,6 +26,7 @@
       "nvim-neoclip-lua"
       "cheatsheet-nvim"
       "dressing-nvim"
+      "flutter-tools-nvim"
 
       pkgs.vimPlugins.nvim-treesitter.withAllGrammars
     ];
